@@ -3,7 +3,7 @@
 
 function app_clear_18plus()
 {
-    if [ $APP_NAME = 'MyBookshelf' ]; then
+    if [ $APP_NAME = 'legado' ]; then
         echo "清空18PlusList.txt"
         echo "">$APP_WORKSPACE/app/src/main/assets/18PlusList.txt
     fi
@@ -31,7 +31,7 @@ function app_minify()
 }
 function app_live_together()
 {
-    if [ $APP_NAME = 'MyBookshelf' ]; then
+    if [ $APP_NAME = 'legado' ]; then
         echo "解决安装程序共存问题"
         sed "s/'.release'/'.releaseA'/" $APP_WORKSPACE/app/build.gradle -i
         sed 's/.release/.releaseA/'     $APP_WORKSPACE/app/google-services.json -i 
@@ -61,7 +61,7 @@ function app_other()
         echo "$APP_NAME 解压MyBookshelf_Keys.zip"
         unzip -o $APP_WORKSPACE/app/MyBookshelf_Keys.zip -d $APP_WORKSPACE/app
         rm $APP_WORKSPACE/app/gradle.properties       
-        sed 's/com.gedoor.monkeybook/com.kunfei.bookshelf/' $APP_WORKSPACE/app/build.gradle -i
+        #sed 's/com.gedoor.monkeybook/com.kunfei.bookshelf/' $APP_WORKSPACE/app/build.gradle -i
     fi
 }
 function app_build()
